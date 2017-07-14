@@ -1,0 +1,750 @@
+@font-face{
+    font-family: "Helvetica Inserat LT";
+    src: url(fonts/Helvetica Inserat LT.ttf);
+    
+    font-family: "1Isadora M";
+    src: url(fonts/IsadoraBold.ttf);
+    
+    font-family: "Helvetica Inserat LT";
+    src: url(fonts/Helvetica Inserat LT.ttf);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+}
+
+html, body{
+    height: 100%;
+}
+
+header{
+    background: url("../img/main-bg.jpg") center top / cover;
+    height: 630px;
+    width: 100%;
+}
+
+h1{
+    position: relative;
+    top: 220px;
+    color: #fff;
+    font-size: 60px;
+    font-family: "1Isadora M";
+    text-align: center;
+}
+
+#our-menu h2,
+#gallery h2,
+#about-us,
+#our-team,
+#testimonials{
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 130px;
+}
+
+#testimonials{
+    margin-top: -150px;
+}
+
+#gallery h2{
+    display: block;
+    margin: 0 40%;
+}
+
+#about-us .container{
+    height: 690px;
+}
+
+.header-topbar{
+    height: 60px;
+    width: 100%;
+    background-color: #141414;
+    position: fixed;
+    z-index: 1111;
+}
+
+.container{
+    position: relative;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+#wrapper:after{
+    content: "";
+    display: block;
+}
+
+footer, #wrapper:after{
+    height: 10px;
+}
+
+/*---------Стилизация шапки меню-----------*/
+
+.menu .fa{
+    font-size: 1.2em;
+}
+
+.menu{
+/*    max-width: 1170px;*/
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    height: 60px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 60px;
+    text-transform: uppercase;
+    display: inline-block;
+    user-select: none;
+    text-align: center;
+    flex-grow: 1;
+    
+}
+
+.menu a:hover{
+    background-color: #df970d;
+    height: 100%;
+}
+
+/*-------------Секция "наше меню"-----------*/
+
+.cup-img{
+    width: 265px;
+    height: 35px;
+    margin: 30px auto;
+    background: url(../img/cup.png) center center / cover;
+}
+
+.text-our{
+    position: absolute;
+    font-size: 16em;
+    top: 50px;
+    right: -200px;
+    font-family: "HelveticaInserat LT";
+    color: #df970d;
+    opacity: .3;
+    text-transform: uppercase;
+}
+
+.text-menu{
+    position: absolute;
+    font-size: 16em;
+    bottom: -80px;
+    left: -150px;
+    font-family: "HelveticaInserat LT";
+    text-transform: uppercase;
+    color: #df970d;
+    opacity: .37;
+}
+
+.modal-menu{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.modal-menu>div{
+    position: relative;
+    width: 355px;
+    height: 470px;
+    display: inline-block;
+    margin-right: 35px;
+    background: url(../img/OE9SGF0.jpg) no-repeat right center / cover;
+    color: #fff;
+    text-align: center;
+    padding-top: 150px;
+    font-size: 33px;
+    font-weight: bold; 
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.modal-menu .desserts{
+    margin: 0;
+}
+
+.border-div1{
+    position: absolute;
+    top: 75px;
+    left: 25px;
+    width: 280px;
+    height: 195px;
+    border: 5px solid #fff;
+}
+
+.border-div2{
+    position: absolute;
+    top: 105px;
+    left: 65px;
+    width: 280px;
+    height: 195px;
+    border: 5px solid #df970d;
+}
+
+.coffee-map a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.coffee-map a:hover{
+    text-decoration: underline;
+    color: #ecbf6a;
+}
+
+.tea-map a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.tea-map a:hover{
+    text-decoration: underline;
+    color: #ecbf6a;
+}
+
+.desserts a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.desserts a:hover{
+    text-decoration: underline;
+    color: #ecbf6a;
+}
+
+.bottom-images{
+    display: flex;
+}
+
+.bottom-images div{
+    width: 355px;
+    height: 250px;
+    display: inline-block;
+    position: relative;
+    top: -150px;
+    left: 19px;
+    margin-right: 30px;
+}
+.coffee-cup{
+    background: url(../img/coffee-cup.png) no-repeat center center / cover;
+}
+
+.tea-cup{
+    background: url(../img/tea-cup.png) no-repeat center center / cover;
+}
+
+.cake{
+    background: url(../img/dessert.png) no-repeat center center / cover;
+}
+
+/*-------------Реализация модального окна-----------*/
+
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    display: none;
+    z-index: 9999;
+}
+
+.modal:target{
+    display: block;
+    pointer-events: auto;
+}
+
+.popup{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background: #fff;
+}
+
+.close{
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    position: absolute;
+    font-size: 20px;
+    top: -30px;
+    right: -15px;
+    text-decoration: none;
+    display: block;
+}
+
+.img-wrap{
+    position: relative;
+    top: 30vh;
+    left: 30vw;
+}
+
+a img{
+    width: 600px;
+    height: 400px;
+}
+
+/*-------------Секция "новинка в меню"-----------*/
+
+.new-taste-bg{
+    width: 100%;
+    height: 250px;
+    margin-top: 100px;
+    background: url("../img/new-taste-bg.png") center center / cover;
+}
+
+.new-taste{
+    width: 430px;
+    height: 250px;
+    display: inline-block;
+    position: relative;
+    right: 0;
+    top: -220px;
+    float: right;
+    background: url("../img/new-taste.png") no-repeat 75% center;
+}
+
+.new-taste-bg h2{
+    padding-top: 4%;
+    padding-left: 15%;
+    font-size: 2.7em;
+    color: #fff;
+    background: url("../img/decor-wings.png") no-repeat 5px 55px;
+    
+}
+
+.new-taste-bg p{
+    color: #fff;
+    margin: 15px;
+    font-size: 1.25em;
+}
+
+/*-------------Секция "наша фотогалерея"(слайдер)-----------*/
+
+.gallery-slider{
+    width: 780px;
+    height: 380px;
+    margin: 0 auto;
+}
+
+.gallery-slider label.hidden{
+    display: none;
+    width: 780px;
+    height: 380px;
+}
+
+label.cs1{
+    background-image: url(../img/gallery-slide1.jpg);
+}
+
+label.cs2{
+    background-image: url(../img/gallery-slide2.jpg);
+}
+
+label.cs3{
+    background-image: url(../img/gallery-slide3.jpg);
+}
+
+input.cs1:checked~label.cs2{
+    display: block;
+}
+
+input.cs2:checked~label.cs3{
+    display: block;
+}
+
+input.cs3:checked~label.cs1{
+    display: block;
+}
+
+[class^="csc"]{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #df970d;
+    background-color: #fff;
+    border-radius: 20%;
+    position: relative;
+    top: -210px;
+    left: 2%;
+    margin-bottom: 5px;
+}
+
+input.cs1:checked~label.csc1{
+    border-radius: 50%;
+    background-color: #df970d;
+    border-color: #fff;
+}
+
+input.cs2:checked~label.csc2{
+    border-radius: 50%;
+    background-color: #df970d;
+    border-color: #fff;
+}
+
+input.cs3:checked~label.csc3{
+    border-radius: 50%;
+    background-color: #df970d;
+    border-color: #fff;
+}
+
+/*-------------Секция "коротко о нас"-----------*/
+
+.about-us-img{
+    width: 585px;
+    height: 540px;
+    display: inline-block;
+    position: absolute;
+    right: 0%;
+    top: 130px;
+    background: url("../img/about-us-img.jpg") no-repeat;
+}
+
+.about-us{
+    position: absolute;
+    width: 775px;
+    height: 440px;
+    background-color: #fff;
+    z-index: 111;
+    box-shadow: 1px 1px 5px #111;
+}
+
+.about-us-bg{
+    position: absolute;
+    top: 110px;
+    left: -20px;
+    width: 775px;
+    height: 440px;
+    background-color: #df970d;  
+}
+
+.about-us p{
+    text-align: left;
+    font-size: 18px;
+    padding: 40px 60px 15px 60px;
+    line-height: 1.7em;
+    text-transform: none;
+}
+
+.about-us-numbers{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.about-us-numbers span{
+    font-size: 70px;
+    font-family: "HelveticaInserat LT";
+    color: #ffd077;
+    opacity: .6;
+}
+
+.about-us-text{
+    display: flex;
+    justify-content: space-around;
+}
+
+.about-us-text span{
+    position: relative;
+    top: -30px;
+    left: 60px;
+    font-size: 24px;
+    font-family: "Open Sans Semibold";
+    text-align: left;
+}
+
+.about-us-text .lastSpan{
+    left: 20px;
+}
+
+.coffee-text{
+    font-size: 100px;
+    font-family: "Open Sans";
+    font-weight: bold;
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -205px;
+    top: 300px;
+    text-transform: none;
+    color: #ffd077;
+    opacity: .6;
+}
+
+/*-------------Секция "наша команда"-----------*/
+
+.our-team{
+    position: absolute;
+    width: 360px;
+    height: 500px;
+    z-index: 111;
+    box-shadow: 1px 1px 5px #111;
+}
+
+.our-team-slider{
+    width: 360px;
+    height: 500px;
+}
+
+.our-team-bg{
+    position: relative;
+    top: 20px;
+    left: 20px;
+    width: 360px;
+    height: 500px;
+    background-color: #df970d;  
+}
+
+.quotes{
+    width: 145px;
+    height: 120px;
+    background: url("../img/quotes.png") no-repeat center center;
+    position: relative;
+    bottom: 500px;
+    left: 450px;
+    opacity: .6;
+}
+
+.person-description h2{
+    position: relative;
+    font-weight: 500;
+}
+
+.person-description h3{
+    position: relative;
+    top: 60px;
+    left: 315px;
+    font-weight: 500;
+}
+
+.person-description p{
+    position: relative;
+    top: 100px;
+    left: 450px;
+    font-weight: 400;
+    text-align: left;
+    display: inline-block;
+    width: 560px;
+    line-height: 1.7em;
+    text-transform: none;
+}
+
+.first-person h2{
+    top: 50px;
+    left: 405px;
+}
+
+.second-person h2{
+    top: 50px;
+    left: 397px;
+}
+
+.second-person h3{
+    top: 60px;
+    left: 328px;
+}
+
+.third-person h2{
+    top: 50px;
+    left: 415px;
+}
+
+.third-person h3{
+    top: 60px;
+    left: 330px;
+}
+/*-------------слайдер "наша команда"-----------*/
+
+.our-team-slider label.hidden{
+    display: none;
+    width: 360px;
+    height: 500px;
+}
+
+label.ots1{
+    background: url(../img//team-slide1.jpg) no-repeat;
+}
+
+label.ots2{
+    background: url(../img//team-slide2.jpg) no-repeat;
+}
+
+label.ots3{
+    background: url(../img//team-slide3.jpg) no-repeat;
+}
+
+input.ots1:checked~label.ots2{
+    display: block;
+}
+
+input.ots2:checked~label.ots3{
+    display: block;
+}
+
+input.ots3:checked~label.ots1{
+    display: block;
+}
+
+[class=cs1],
+[class=cs2],
+[class=cs3],
+[class=ots1],
+[class=ots2],
+[class=ots3]{
+    display: none;
+}
+
+[class^="otsc"]{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #df970d;
+    background-color: #fff;
+    border-radius: 20%;
+    position: relative;
+    top: -30px;
+    left: 2%;
+    margin-right: 5px;
+}
+
+input.ots1:checked~label.otsc1{
+    border-radius: 50%;
+    background-color: #df970d;
+    border-color: #fff;
+}
+
+input.ots2:checked~label.otsc2{
+    border-radius: 50%;
+    background-color: #df970d;
+    border-color: #fff;
+}
+
+input.ots3:checked~label.otsc3{
+    border-radius: 50%;
+    background-color: #df970d;
+    border-color: #fff;
+}
+
+/*-------------секция"отзывы"-----------*/
+
+.quotes-small .left-quotes{
+    width: 40px;
+    height: 40px;
+    background: url("../img/quotes-small.png") no-repeat center center;
+    position: relative;
+    top: 0px;
+    left: 260px;
+}
+
+.quotes-small .right-quotes{
+    width: 40px;
+    height: 40px;
+    background: url("../img/quotes-small.png") no-repeat center center;
+    position: relative;
+    top: -40px;
+    left: 850px;
+}
+
+.testimonials p{
+    display: inline-block;
+    text-align: left;
+    width: 400px;
+    text-transform: none;
+    margin: -2% 7%;
+    font-style: italic;
+}
+
+.testimonials h3{
+    display: inline-block;
+    margin: 2% 7% 10% 7%;
+}
+
+/*-------------футер-----------*/
+
+.footer-bg{
+    width: 100%;
+    height: 550px;
+    background: url("../img/footer-bg.jpg") no-repeat center center / cover;
+    position: absolute;
+}
+
+.footer{
+    color: #fff;
+}
+
+.footer h2{
+    text-align: center;
+    padding-top: 120px;
+}
+
+/*-------------форма заказа-----------*/
+
+.footer-bar{
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    top: 320px;
+    left: 0;
+    color: #fff;
+    margin: 0 20%;
+    text-align: center;
+}
+
+form{
+    position: relative;
+    color: #fff;
+}
+
+.form{
+    width: 630px;
+    height: 260px;
+    position: relative;
+    top: -30px;
+    left: 45%;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.form textarea{
+    float: right;
+    position: relative;
+    top: -252px;
+    width: 330px;
+    height: 120px;
+}
+
+[type=text]{
+    height: 35px;
+    width: 200px;
+}
+
+[type=submit]{
+    float: right;
+    position: relative;
+    top: -82px;
+    left: 330px;
+    width: 160px;
+    height: 40px;
+    background-color: #df970d;
+    border: 0;
+}
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts{
+    position: absolute;
+    font-size: 1.3em;
+    top: 180px;
+}
